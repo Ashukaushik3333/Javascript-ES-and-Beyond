@@ -44,7 +44,7 @@
 }
 
 .flex-blackjack-row-1 div{
-	height: 350px;
+	height: contents;
 	align-items: center; 
 	padding: 10px;
 	border: 1px solid black;
