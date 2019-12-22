@@ -1,0 +1,22 @@
+//JavaScriptObjectNotation(JSON)
+//It is used to represent data. It is used by apis to carry information that is very very light weight.
+
+let students=`[
+	{
+		"name"   : "Shreyans Jain",
+		"age"    : "19",
+		"height" : "5.9" 
+	},
+	{
+		"name"   : "Harsh Jain",
+		"age"    : "15",
+		"height" : "5.2"
+	}
+]`
+
+console.log(students)
+console.log(JSON.parse(students));
+console.log(JSON.parse(students)[1]);
+console.log(JSON.parse(students)[1].age);
+
+//by using ` it becomes a string
