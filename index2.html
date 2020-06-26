@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Morden Javascript</title>
+</head>
+<body>
+	<h2 style="padding:25px">Javascript and Beyond</h2>
+	<p id='example1'></p>
+	<p id='example2'></p>
+	<script type="text/javascript">
+		let word1 = 'Shreyans'
+		let word2 = 'Jain'
+		let example = 'Hello\n'+'world'
+
+		console.log(example) // old version javascript will print hello world in a single line
+		document.getElementById('example1').innerText = example
+
+		example = `${word1}
+		${word2}`
+
+		console.log(example)
+		document.getElementById('example2').innerText = example
+
+	</script>
+	<script type="text/javascript">
+		const apiUrl = 'https://api.weatherbit.io/v2.0/current?lat=22.806160&lon=86.165260&key=a8bbb58755e04cef8f02aef111c29cba'
+
+		// CallBack hell
+		let getTop100Cammpers = () => {
+			console.log(apiUrl)
+			fetch(apiUrl)
+			.then(res => res.json())
+			.then(json => {
+				console.log(json)
+			}).catch(err => {
+				console.log(err);
+			})
+		}
+		getTop100Cammpers()
+
+		// Async & Await
+		let getTopCampers = async () => {
+			const res = await fetch(apiUrl).catch(err => console.error())
+			const json = await res.json().catch(err => console.error())
+			console.log(json)
+		}
+		getTopCampers()
+
+		// less line of code 
+		let getCampers = async () => {
+			const json = await (await fetch(apiUrl)).json().catch(err => console.error())
+			console.log(json)
+		}
+		getCampers()
+	</script>
+	<!-- <script type="module" src="importExport.mjs"></script> -->
+</body>
+</html>
